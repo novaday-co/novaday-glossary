@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novaday Glossary</title>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="container mx-auto p-6">
+        <h1 class="text-3xl font-bold text-center text-gray-800">Novaday Glossary</h1>
+        <div class="mt-6">
+            <input type="text" id="search-input" class="w-full p-4 border border-gray-300 rounded-lg" placeholder="کلمه‌ای را جستجو کنید ...">
+        </div>
+        <div id="results" class="mt-6"></div>
+    </div>
+
+    <script src="data/words.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

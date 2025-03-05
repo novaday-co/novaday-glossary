@@ -1,0 +1,16 @@
+body {
+    direction: rtl;
+    font-family: 'Vazirmatn', sans-serif !important;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
+#results {
+    display: grid;
+    gap: 1rem;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap');
