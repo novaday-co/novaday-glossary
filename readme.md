@@ -1,24 +1,22 @@
-# Novaday Glossary
+# Novaday Glossary Web App
 
-A simple and clean web application for searching and displaying word definitions, pronunciation, and meanings. This project is built using **HTML**, **CSS** (with **Tailwind CSS**), and **JavaScript**. The app allows users to search for words and view their associated details, all stored in a JSON file (TODO).
+This project is an online dictionary web app that allows users to search for words and view their meanings. The app is built using JavaScript and CSS, and includes the following features:
 
-## Features
+- **Word Search**: Users can search for words and see their meanings.
+- **Case-insensitive Search**: The search is case-insensitive, meaning that both uppercase and lowercase letters are treated equally.
+- **Search Across Multiple Fields**: The app searches in the `word`, `pronunciation`, and `meaning` fields.
 
-- **Search Functionality**: Users can search for words, meanings, or pronunciations.
-- **Categorization**: Words can be tagged under different categories.
-- **Clean & Responsive Design**: Built with Tailwind CSS to ensure responsiveness and easy customization.
-- **No Frameworks**: Developed without using any frameworks for simplicity and lightweight performance.
-- **Solid & Clean Code**: Focus on maintainability, readability, and scalability.
+## Live Demo
 
-## Getting Started
+You can access the live version of the app at the following link:
 
-### Prerequisites
+[Novaday Glossary Web App](http://novaday-co.github.io/novaday-glossary)
 
-- Basic knowledge of HTML, CSS, and JavaScript.
-- A modern web browser to run the application.
+## Installation and Usage
 
-### Installation
+To install and use this project locally, follow these steps:
 
-1. **Clone the repository**:
+1. Clone the repository:
+
    ```bash
-   git clone https://github.com/your-username/dictionary-web-app.git
+   git clone https://github.com/novaday-co/novaday-glossary.git
