@@ -10,7 +10,7 @@ This project is an online dictionary web app that allows users to search for wor
 
 You can access the live version of the app at the following link:
 
-[Novaday Glossary Web App](http://novaday-co.github.io/novaday-glossary)
+[Novaday Glossary Web App](http://glossary.novaday.ir)
 
 ## Installation and Usage
 
