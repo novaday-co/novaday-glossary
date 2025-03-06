@@ -3,14 +3,66 @@ body {
     font-family: 'Vazirmatn', sans-serif !important;
 }
 
-input[type="text"]:focus {
-    outline: none;
-    border-color: #4CAF50;
+/* تنظیمات کشو */
+.accordion {
+    width: 100%;
+    background-color: #f3f3f3;
+    border: none;
+    text-align: right;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s;
 }
 
-#results {
-    display: grid;
-    gap: 1rem;
+.accordion:hover, .accordion.active {
+    background-color: #4CAF50;
+    color: white;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap');
+.panel {
+    display: none;
+    padding: 10px;
+}
+
+.panel.active {
+    display: block;
+}
+
+/* کشو های باز در موبایل */
+@media (max-width: 768px) {
+    #sidebar {
+        display: block;
+    }
+    main {
+        width: 100%;
+    }
+}
+
+/* دکمه‌های حروف الفبا */
+.letter {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.letter:hover {
+    background: #4CAF50;
+    color: white;
+}
+
+/* اضافه کردن فضای خالی به هر باکس کلمه */
+.word-box {
+    position: relative;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+/* تغییر رنگ گزینه‌ها هنگام انتخاب */
+.selected {
+    background-color: #4CAF50;
+    color: white;
+}

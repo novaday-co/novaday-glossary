@@ -9,12 +9,45 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-gray-100 font-sans">
-    <div class="container mx-auto p-6">
-        <h1 class="text-3xl font-bold text-center text-gray-800">Novaday Glossary</h1>
-        <div class="mt-6">
-            <input type="text" id="search-input" class="w-full p-4 border border-gray-300 rounded-lg" placeholder="کلمه‌ای را جستجو کنید ...">
-        </div>
-        <div id="results" class="mt-6"></div>
+
+    <!-- هدر -->
+    <header class="bg-white shadow-md p-4 flex justify-end items-center">
+        <h1 class="text-2xl font-bold text-gray-700">Novaday Glossary</h1>
+    </header>
+
+    <!-- محتوای اصلی -->
+    <div class="container mx-auto mt-6 flex gap-6 flex-col lg:flex-row">
+
+        <!-- ستون سمت راست (فیلترها) -->
+        <aside id="sidebar" class="w-full lg:w-1/4 bg-white p-4 rounded-lg shadow-md mb-6 lg:mb-0">
+            <button id="filter-all" class="accordion active">📋 لیست همه کلمات</button>
+            <div class="panel" id="all-words-panel">
+                <ul id="all-words-list" class="list-disc list-inside mt-3"></ul>
+            </div>
+
+            <button id="filter-categories" class="accordion">📂 دسته‌بندی‌ها</button>
+            <div class="panel" id="categories-panel">
+                <ul id="categories-list" class="list-disc list-inside mt-3"></ul>
+            </div>
+
+            <button id="filter-alphabet-en" class="accordion">🔤 حروف الفبا انگلیسی</button>
+            <div class="panel" id="alphabet-en-panel">
+                <div id="alphabet-en" class="flex flex-wrap gap-2 mt-3"></div>
+            </div>
+
+            <button id="filter-alphabet-fa" class="accordion">🔠 حروف الفبا فارسی</button>
+            <div class="panel" id="alphabet-fa-panel">
+                <div id="alphabet-fa" class="flex flex-wrap gap-2 mt-3"></div>
+            </div>
+        </aside>
+
+        <!-- ستون سمت چپ (کلمات و جستجو) -->
+        <main class="w-full lg:w-3/4 bg-white p-6 rounded-lg shadow-md">
+            <input type="text" id="search-input" class="w-full p-3 border border-gray-300 rounded-lg mb-4" placeholder="کلمه‌ای را جستجو کنید ...">
+            <div id="breadcrumb" class="text-gray-600 mb-4 hidden"></div>
+            <div id="results" class="grid gap-4"></div>
+        </main>
+
     </div>
 
     <script src="data/words.js"></script>
