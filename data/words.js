@@ -254,7 +254,7 @@ const wordsData = [
     },
     {
       "word": "Customer Acquisition Cost (CAC)",
-      "pronunciation": "هزینه جذب مشتری",
+      "pronunciation": "کک - کاستومر اکویزیشن کاست",
       "meaning": "هزینه جذب مشتری",
       "description": "هزینه‌ای که برای جذب یک مشتری جدید صرف می‌شود.",
       "categories": ["software"]
@@ -484,31 +484,10 @@ const wordsData = [
       "categories": ["software"]
     },
     {
-      "word": "A/B Testing",
-      "pronunciation": "تست A/B",
-      "meaning": "آزمایش A/B",
-      "description": "آزمایش دو نسخه مختلف از یک ویژگی",
-      "categories": ["software"]
-    },
-    {
-      "word": "Churn Rate",
-      "pronunciation": "نرخ ریزش",
-      "meaning": "نرخ ریزش کاربران",
-      "description": "نرخ ریزش کاربران",
-      "categories": ["software"]
-    },
-    {
       "word": "Customer Lifetime Value (CLV)",
       "pronunciation": "ارزش طول عمر مشتری",
       "meaning": "ارزش طول عمر مشتری",
       "description": "ارزش طول عمر مشتری",
-      "categories": ["software"]
-    },
-    {
-      "word": "CAC (Customer Acquisition Cost)",
-      "pronunciation": "کاک (هزینه جذب مشتری)",
-      "meaning": "هزینه جذب مشتری",
-      "description": "هزینه جذب مشتری",
       "categories": ["software"]
     },
     {
