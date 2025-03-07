@@ -9,11 +9,39 @@ document.addEventListener('DOMContentLoaded', () => {
     const sidebar = document.getElementById('sidebar');
     let currentFilter = ''; // فیلتر فعلی
 
+
+    const SUPABASE_URL = "https://ahitdzdeebfjhodmxwcs.supabase.co";  
+    const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFoaXRkemRlZWJmamhvZG14d2NzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDEzMzE4MTUsImV4cCI6MjA1NjkwNzgxNX0.G0RbOjfYYewnQ9Tp4hj36_nq-dhq3Dr9gcy6wtT2vds";  
+    window.supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+
+    async function fetchWords() {
+
+        document.getElementById("results").innerHTML = "در حال بارگذاری ...";
+
+        let { data, error } = await supabase.from('words').select('*');
+        if (error) {
+            document.getElementById("results").innerHTML = "خطا در دریافت داده‌ها!";
+            console.error('Error fetching words:', error);
+            return;
+        }
+
+        wordsData = data;
+        
+        // بارگذاری اولیه
+        loadCategories();
+        displayResults(data); // تابعی که کلمات را در صفحه نمایش می‌دهد
+    }
+    
+    fetchWords(); // اجرای تابع هنگام بارگذاری صفحه
+
+
     // نمایش نتایج
     function displayResults(words, filter = '') {
         resultsContainer.innerHTML = '';
         breadcrumb.innerHTML = filter ? `🔎 نمایش نتایج برای: ${filter}` : '';
         breadcrumb.classList.toggle('hidden', !filter);
+        
 
         words.forEach(word => {
             const wordElement = document.createElement('div');
@@ -22,7 +50,9 @@ document.addEventListener('DOMContentLoaded', () => {
             wordElement.innerHTML = `
                 <h2 class="text-xl font-semibold">${word.word}</h2>
                 <p class="text-sm text-gray-500 mb-3">${word.pronunciation}</p>
-                <p><strong>معنی:</strong> ${word.meaning}</p>
+                <p><strong>معادل فارسی:</strong> ${word.meaning}</p>
+                <p><strong>توضیحات:</strong> ${word.description}</p>
+
                 <p><strong>دسته‌بندی‌ها:</strong> ${word.categories.join(', ')}</p>
                 <a href="https://www.google.com/search?q=what+is+${word.word}" target="_blank" class="absolute left-3 top-3 text-blue-600 hover:text-blue-800 opacity-20">🔍</a>
             `;
@@ -144,10 +174,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // بارگذاری اولیه
-    loadCategories();
     createAlphabetButtons(alphabetEnContainer, ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'], 'alphabet-en');
     createAlphabetButtonsFA(alphabetFaContainer, ['ا', 'ب', 'پ', 'ت', 'ث', 'ج', 'چ', 'ح', 'خ', 'د', 'ذ', 'ر', 'ز', 'ژ', 'س', 'ش', 'ص', 'ض', 'ط', 'ظ', 'ع', 'غ', 'ف', 'ق', 'ک', 'گ', 'ل', 'م', 'ن', 'و', 'ه', 'ی'], 'alphabet-fa');
-    displayResults(wordsData);
 });
-  
