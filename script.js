@@ -22,10 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
             wordElement.innerHTML = `
                 <h2 class="text-xl font-semibold">${word.word}</h2>
                 <p class="text-sm text-gray-500 mb-3">${word.pronunciation}</p>
-                <p><strong>معنی:</strong> ${word.meaning}</p>
+                <p><strong>معادل فارسی:</strong> ${word.meaning}</p>
+                <p><strong>توضیحات:</strong> ${word.description}</p>
+
                 <p><strong>دسته‌بندی‌ها:</strong> ${word.categories.join(', ')}</p>
                 <a href="https://www.google.com/search?q=what+is+${word.word}" target="_blank" class="absolute left-3 top-3 text-blue-600 hover:text-blue-800 opacity-20">🔍</a>
-            `;
+             `;
 
             resultsContainer.appendChild(wordElement);
         });
